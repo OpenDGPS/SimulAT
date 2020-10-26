@@ -1,6 +1,6 @@
 # -I${CUDA_HOME}/samples/common/inc
-simulat: simulat.c
-	nvcc -o ../simulat simulat.c
+simulat:
+	nvcc -o simulat src/simulat.c
 
 clean:
-	rm -f ../simulat
+	rm -f simulat
