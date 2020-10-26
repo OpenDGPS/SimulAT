@@ -53,7 +53,7 @@ __device__ void createPersonsFromRaster(int *rasterRecord) {
                                   hhSize = 13;
                              default:
                              	hhSize = random (13 to 25);
-				}		   
+			}		   
 		}
 		  	  
 		  
