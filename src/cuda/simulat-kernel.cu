@@ -35,24 +35,24 @@ __device__ void createPersonsFromRaster(int *rasterRecord) {
 				hhSize = 5;
 		   if ( listOfFieldsWithAvailableHH[piHH] == 4 ) // 6+ persons {
                       switch ( random (0 to 100) < 50 )
-		             case < 30:
-                                  hhSize = 6;
-			     case < 55:
-                                  hhSize = 7;
-                             case < 65:
-                                  hhSize = 8;
-                             case < 75:
-                                  hhSize = 9;
-                             case < 85:
-                                  hhSize = 10;
-                             case < 92:
-                                  hhSize = 11;
-                             case < 95:
-                                  hhSize = 12;
-                             case < 98:
-                                  hhSize = 13;
-                             default:
-                             	hhSize = random (13 to 25);
+		            	case < 30:
+                        	hhSize = 6;
+			 			case < 55:
+                            hhSize = 7;
+                        case < 65:
+                            hhSize = 8;
+                        case < 75:
+                            hhSize = 9;
+                        case < 85:
+                            hhSize = 10;
+                        case < 92:
+                            hhSize = 11;
+                        case < 95:
+                            hhSize = 12;
+                        case < 98:
+                            hhSize = 13;
+                        default:
+                        	hhSize = random (13 to 25);
 			}		   
 		}
 		  	  
