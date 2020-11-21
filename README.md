@@ -22,4 +22,6 @@ for raster in demographicrecords
     if currentAddressLat < currentRasterLat
       latestAddressWithBiggerLat = address[id]
     else 
+´´´
+
     
