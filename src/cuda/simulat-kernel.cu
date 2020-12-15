@@ -5,6 +5,12 @@ int genderLUT = [0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1];
 int ageMinLUT = [0,3,6,9,13,18,24,34,44,54,69,79,0,3,6,9,13,18,24,34,44,54,69,79];
 int ageMaxLut = [2,5,8,12,17,23,33,43,53,68,78,2,5,8,12,17,23,33,43,53,68,78];
 
+#define NUMOFRASTERRECORDSPERCORE = 160  // defined by num of raster records ~80k divided by num of GPU cores ~512
+#define NUMOFADDRESSRECORDSPERCORE = 5000 // defined by num of address records ~2.5m divided by num of GPU cores ~512  
+__device__ void mapRasterToAddresses(int *rasterRecords, int *addressRecords) {
+	int threadId;
+	for (
+}
 __device__ void createPersonsFromRaster(int *rasterRecord) {
 	   int numOfPersons, numOfHouseholds, pickAdult, i, j, k;
 	   numOfPersons = rasterRecord[NUM_OF_PERSONS_FIELD_IN_RASTER];
