@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "cuda/simulat-kernel.cu"
 
 int main ( void ) {
   /*
