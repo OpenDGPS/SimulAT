@@ -6,10 +6,33 @@ int ageMinLUT = [0,3,6,9,13,18,24,34,44,54,69,79,0,3,6,9,13,18,24,34,44,54,69,79
 int ageMaxLut = [2,5,8,12,17,23,33,43,53,68,78,2,5,8,12,17,23,33,43,53,68,78];
 
 #define NUMOFRASTERRECORDSPERCORE = 160  // defined by num of raster records ~80k divided by num of GPU cores ~512
-#define NUMOFADDRESSRECORDSPERCORE = 5000 // defined by num of address records ~2.5m divided by num of GPU cores ~512  
+#define SIZEOFRASTERRECORD = 4 // DWORDS to jump between the records
+
+#define NUMOFADDRESSRECORDSPERCORE = 5000 // defined by num of address records ~2.5m divided by num of GPU cores ~512
+#define NUMOFADDRESSBLOCKS = 512 // equal to the number of GPU cores
+#define SIZEOFADDRESSRECORDS = 5 // DWORDS to jump between the records
+
 __device__ void mapRasterToAddresses(int *rasterRecords, int *addressRecords) {
-	int threadId;
-	for (
+
+	int threadId, recordNum, addressBlockNum, currentAddressBlockNum, addressNumInBlock, rasterBase, addressBase;
+	
+	for ( addressBlockNum = 0; addressBlockNum < NUMOFADDRESSBLOCKS; NUMOFADDRESSBLOCKS++ ) {
+	
+		currentAddressBlockNum = ( addressBlockNum + threadId ) % NUMOFADDRESSBLOCKS;
+	    
+	    addressBase = addressRecords + ( currentAddressBlockNum * NUMOFADDRESSRECORDSPERCORE * SIZEOFADDRESSRECORDS );
+
+	    for ( recordNum = 0; recordNum < NUMOFRASTERRECORDSPERCORE; recordNum++ ) {
+
+	    	currentRaster = rasterRecords + ( threadId * SIZEOFRASTERRECORD );
+
+			for ( addressNum = 0; addressNum < NUMOFADDRESSRECORDSPERCORE; addressNum++ ) {
+
+			    currentAddress = addressBase + ( addressNum * SIZEOFADDRESSRECORDS );
+			
+			}
+	    }
+	}
 }
 __device__ void createPersonsFromRaster(int *rasterRecord) {
 	   int numOfPersons, numOfHouseholds, pickAdult, i, j, k;
