@@ -13,15 +13,4 @@ Don't know yet!
 2. Set index for every raster record
 3. Sort Eichamt data by Lat and Lon fields
 
-```
-latestAddressWithBiggerLat = 0
-for raster in demographicrecords
-  currentRasterLat = raster[Lat]
-  for i = latestAddressWithBiggerLat; i < length(eichamtRecords); i++
-    currentAddressLat = address[i][Lat];
-    if currentAddressLat < currentRasterLat
-      latestAddressWithBiggerLat = address[id]
-    else 
-```
-
     
