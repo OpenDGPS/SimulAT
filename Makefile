@@ -6,3 +6,4 @@ clean:
 	rm -f simulat
 
 all: clean simulat 
+	./simulat
