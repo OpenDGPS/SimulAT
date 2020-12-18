@@ -11,6 +11,7 @@
 
 
 int main ( void ) {
+  mapRasterToAddresses(0,0);
   /*
     1. Initializing memory for raster records
     2. Read the CSV to host memory 

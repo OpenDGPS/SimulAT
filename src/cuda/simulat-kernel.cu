@@ -5,10 +5,14 @@
 #define NUMOFADDRESSBLOCKS 512 // equal to the number of GPU cores
 #define SIZEOFADDRESSRECORD 5 // DWORDS to jump between the records
 
-__global__ void mapRasterToAddresses(int rasterRecords, int addressRecords) {
+// __global__ 
+
+void mapRasterToAddresses(int rasterRecords, int addressRecords) {
 
 	int threadId, recordNum, addressBlockNum, currentAddressBlockNum, addressNumInBlock, rasterBase, addressBase, addressNum, currentRaster, currentAddress;
 	
+	threadId = 1;
+
 	for ( addressBlockNum = 0; addressBlockNum < NUMOFADDRESSBLOCKS; addressBlockNum++ ) {
 	
 		currentAddressBlockNum = ( addressBlockNum + threadId ) % NUMOFADDRESSBLOCKS;
@@ -17,11 +21,13 @@ __global__ void mapRasterToAddresses(int rasterRecords, int addressRecords) {
 
 	    for ( recordNum = 0; recordNum < NUMOFRASTERRECORDSPERCORE; recordNum++ ) {
 
-	    	currentRaster = rasterRecords + ( recordNum * SIZEOFRASTERRECORD ) + ( threadId * SIZEOFRASTERRECORD );
+			currentRaster = rasterRecords + ( recordNum * SIZEOFRASTERRECORD ) + ( threadId * SIZEOFRASTERRECORD );
 
 			for ( addressNum = 0; addressNum < NUMOFADDRESSRECORDSPERCORE; addressNum++ ) {
 
-			    currentAddress = addressBase + ( addressNum * SIZEOFADDRESSRECORD );
+				currentAddress = addressBase + ( addressNum * SIZEOFADDRESSRECORD );
+				
+				printf("threadId = %d \taddressBase = %d\n",threadId, addressBase);
 			
 			}
 	    }
