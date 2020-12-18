@@ -13,7 +13,7 @@ void mapRasterToAddresses(int rasterRecords, int addressRecords) {
 
 	int threadId, recordNum, addressBlockNum, currentAddressBlockNum, addressNumInBlock, rasterBase, addressBase, addressNum, currentRaster, currentAddress;
 	
-	threadId = 1;
+	threadId = globalThreadId;
 
 	for ( addressBlockNum = 0; addressBlockNum < NUMOFADDRESSBLOCKS; addressBlockNum++ ) {
 	

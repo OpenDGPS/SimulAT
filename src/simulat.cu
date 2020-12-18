@@ -9,9 +9,12 @@
 
 #include "cuda/simulat-kernel.cu"
 
+int globalThreadId = 0;
 
 int main ( void ) {
-  mapRasterToAddresses(0,0);
+  for (globalThreadId = 0; globalThreadId < 10; globalThreadId++ ) {
+    mapRasterToAddresses(0,0);
+  }
   /*
     1. Initializing memory for raster records
     2. Read the CSV to host memory 
