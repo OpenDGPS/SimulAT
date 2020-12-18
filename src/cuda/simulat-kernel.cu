@@ -29,7 +29,7 @@ void mapRasterToAddresses(int rasterRecords, int addressRecords) {
 
 				currentAddress = addressBase + ( addressNum * SIZEOFADDRESSRECORD );
 				
-				printf("threadId = %d \taddressBase = %d\n",threadId, addressBase);
+				printf("threadId = %d \taddressBase = %d \tcurrentRaster = %d \tcurrentAddress = %d\n",threadId, addressBase, currentRaster,currentAddress);
 			
 			}
 	    }
