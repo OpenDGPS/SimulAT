@@ -4,3 +4,5 @@ simulat:
 
 clean:
 	rm -f simulat
+
+all: clean simulat 
