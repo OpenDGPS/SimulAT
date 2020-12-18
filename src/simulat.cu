@@ -7,7 +7,7 @@
 #include <helper_functions.h>
 #include <helper_cuda.h>
 
-// #include "cuda/simulat-kernel.cu"
+#include "cuda/simulat-kernel.cu"
 
 
 int main ( void ) {
