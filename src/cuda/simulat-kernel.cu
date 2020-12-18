@@ -1,10 +1,3 @@
-
-#define NUM_OF_PERSONS_FIELD_IN_RASTER 4
-
-//  int genderLUT = [0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1];
-//  int ageMinLUT = [0,3,6,9,13,18,24,34,44,54,69,79,0,3,6,9,13,18,24,34,44,54,69,79];
-//  int ageMaxLut = [2,5,8,12,17,23,33,43,53,68,78,2,5,8,12,17,23,33,43,53,68,78];
-
 #define NUMOFRASTERRECORDSPERCORE 160  // defined by num of raster records ~80k divided by num of GPU cores ~512
 #define SIZEOFRASTERRECORD 4 // DWORDS to jump between the records
 

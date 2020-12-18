@@ -10,6 +10,15 @@ import CSV
 # ╔═╡ 2afa63bc-33cc-11eb-17ee-775f761bafd1
 import DataFrames
 
+# ╔═╡ b8ea3d76-33f6-11eb-035a-e75f6aa022eb
+demographic = CSV.read("/Users/rene/Data/UNIQA/DemographicData/raster250-hole-austria-with-generalized-latlaon.csv")
+
+# ╔═╡ 56cdd0c8-33f7-11eb-148d-6b58e4ee88dc
+demographic.LAT
+
+# ╔═╡ fe64378c-33f6-11eb-2b46-877c21a7e605
+DataFrames.describe(demographic)
+
 # ╔═╡ 34151992-33cc-11eb-1194-fbb0c1dcbb9f
 function mergecrspcompkernel(;crsp=error("crsp is required"), comp=error("comp is required"))
   ###Merge one permno at a time, linking each crsp row to a compid (comp row)
@@ -56,4 +65,7 @@ end
 # ╔═╡ Cell order:
 # ╠═0d72abba-33cc-11eb-17d9-dd6b7b0e20ea
 # ╠═2afa63bc-33cc-11eb-17ee-775f761bafd1
+# ╠═b8ea3d76-33f6-11eb-035a-e75f6aa022eb
+# ╠═56cdd0c8-33f7-11eb-148d-6b58e4ee88dc
+# ╠═fe64378c-33f6-11eb-2b46-877c21a7e605
 # ╠═34151992-33cc-11eb-1194-fbb0c1dcbb9f
