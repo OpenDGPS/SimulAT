@@ -7,6 +7,8 @@
 #define NUMOFADDRESSBLOCKS 12 // 512 // equal to the number of GPU cores
 #define SIZEOFADDRESSRECORD 5 // DWORDS to jump between the records
 
+int globalThreadId = 0;
+
 // __global__ 
 
 void mapRasterToAddresses(int rasterRecords, int addressRecords) {

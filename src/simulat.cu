@@ -9,8 +9,6 @@
 
 #include "cuda/simulat-kernel.cu"
 
-int globalThreadId = 0;
-
 int main ( void ) {
   for (globalThreadId = 0; globalThreadId < 10; globalThreadId++ ) {
     mapRasterToAddresses(0,0);
