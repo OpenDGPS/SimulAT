@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #define NUMOFRASTERRECORDSPERCORE 160  // defined by num of raster records ~80k divided by num of GPU cores ~512
 #define SIZEOFRASTERRECORD 4 // DWORDS to jump between the records
 
