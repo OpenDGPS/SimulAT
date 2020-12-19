@@ -2,8 +2,8 @@
 
 #define NUMOFRASTERRECORDSPERCORE 3 // 160  // defined by num of raster records ~80k divided by num of GPU cores ~512
 
-// rasters are stored in  int(4Byte): rasterDd, int(4Byte): lat, int(4Byte): lon, int(4Byte): [empty]
-#define SIZEOFRASTERRECORD 3 // DWORDS to jump between the records
+// rasters are stored in  int(4Byte): rasterDd, int(4Byte): minLat, int(4Byte): minLon, int(4Byte): maxLat, int(4Byte): maxLon, int(4Byte): [empty]
+#define SIZEOFRASTERRECORD 5 // DWORDS to jump between the records
 
 #define NUMOFADDRESSRECORDSPERBLOCK 4 // 5000 // defined by num of address records ~2.5m divided by num of GPU cores ~512
 #define NUMOFADDRESSBLOCKS 3 // 512 // equal to the number of GPU cores
@@ -42,6 +42,8 @@ void mapRasterToAddresses(int rasterBase, int addressRecords) {
 				printf("\t\trecordNum:\t%d\tcurrentRasterAddress:\t%d\n",recordNum,currentRasterAddress);
 
 				printf("\t\t\taddressNum = %d \tcurrentAddressAddress = %d\n", addressNum, currentAddressAddress);
+
+				printf("Test if currentRasterAddress:[%d][1] < currentAddressAddress:[%d][1]", currentRasterAddress,currentAddressAddress);
 			
 			}
 	    }
