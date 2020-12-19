@@ -1,19 +1,23 @@
 #include <stdio.h>
 
 #define NUMOFRASTERRECORDSPERCORE 3 // 160  // defined by num of raster records ~80k divided by num of GPU cores ~512
+
+// rasters are stored in  int(4Byte): rasterDd, int(4Byte): lat, int(4Byte): lon, int(4Byte): [empty]
 #define SIZEOFRASTERRECORD 4 // DWORDS to jump between the records
 
 #define NUMOFADDRESSRECORDSPERCORE 4 // 5000 // defined by num of address records ~2.5m divided by num of GPU cores ~512
 #define NUMOFADDRESSBLOCKS 3 // 512 // equal to the number of GPU cores
+
+// addresses are stored in int(4Byte): id, int(4Byte): lat, int(4Byte): lon, int(4Byte): [rasterId]
 #define SIZEOFADDRESSRECORD 5 // DWORDS to jump between the records
 
 int globalThreadId = 0;
 
 // __global__ 
 
-void mapRasterToAddresses(int rasterRecords, int addressRecords) {
+void mapRasterToAddresses(int rasterBase, int addressRecords) {
 
-	int threadId, recordNum, addressBlockNum, currentAddressBlockNum, addressNumInBlock, rasterBase, addressBase, addressNum, currentRasterAddress, currentAddressAddress;
+	int threadId, recordNum, addressBlockNum, currentAddressBlockNum, addressBase, addressNum, currentRasterAddress, currentAddressAddress;
 	
 	threadId = globalThreadId;
 
