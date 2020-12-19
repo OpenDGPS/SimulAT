@@ -17,7 +17,7 @@ int globalThreadId = 0;
 
 void mapRasterToAddresses(int rasterBase, int addressRecords) {
 
-	int threadId, recordNum, addressBlockNum, currentAddressBlockNum, addressNumInBlock, addressBase, addressNum, currentRasterAddress, currentAddressAddress;
+	int threadId, recordNum, addressBlockNum, currentAddressBlockNum, addressBase, addressNum, currentRasterAddress, currentAddressAddress;
 	
 	threadId = globalThreadId;
 
