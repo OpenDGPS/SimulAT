@@ -9,9 +9,11 @@
 
 #include "cuda/simulat-kernel.cu"
 
+// Latitude Differenz = 0,002246  
+// Longitude Differenz = 0,003255
 int main ( void ) {
   for (globalThreadId = 0; globalThreadId < 3; globalThreadId++ ) {
-    mapRasterToAddresses(0,0);
+    mapRasterToAddresses(2000,4000);
   }
   /*
     1. Initializing memory for raster records
