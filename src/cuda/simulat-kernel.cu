@@ -17,7 +17,7 @@ void mapRasterToAddresses(int rasterRecords, int addressRecords) {
 	
 	threadId = globalThreadId;
 
-	printf("treadId:\t%d\n",treadId);
+	printf("threadId:\t%d\n",threadId);
 
 	for ( addressBlockNum = 0; addressBlockNum < NUMOFADDRESSBLOCKS; addressBlockNum++ ) {
 	
@@ -37,7 +37,7 @@ void mapRasterToAddresses(int rasterRecords, int addressRecords) {
 
 				currentAddressAddress = addressBase + ( addressNum * SIZEOFADDRESSRECORD );
 				
-				printf("threadId = %d \taddressBase = %d \tcurrentRaster = %d \tcurrentAddress = %d\n",threadId, addressBase, currentRaster,currentAddress);
+				printf("threadId = %d \taddressBase = %d \tcurrentRaster = %d \tcurrentAddress = %d\n",threadId, addressBase, currentRasterAddress,currentAddressAddress);
 			
 			}
 	    }
