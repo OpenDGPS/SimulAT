@@ -17,7 +17,7 @@ int globalThreadId = 0;
 
 void mapRasterToAddresses(int rasterBase, int addressRecords) {
 
-	int threadId, recordNum, addressBlockNum, currentAddressBlockNum, addressBase, addressNum, currentRasterAddress, currentAddressAddress;
+	int threadId, recordNum, addressBlockNum, currentAddressBlockNum, addressNumInBlock, addressBase, addressNum, currentRasterAddress, currentAddressAddress;
 	
 	threadId = globalThreadId;
 
@@ -29,7 +29,7 @@ void mapRasterToAddresses(int rasterBase, int addressRecords) {
 
 		for ( recordNum = 0; recordNum < NUMOFRASTERRECORDSPERCORE; recordNum++ ) {
 
-			currentRasterAddress = rasterRecords + ( recordNum * SIZEOFRASTERRECORD ) + ( threadId * SIZEOFRASTERRECORD );
+			currentRasterAddress = rasterBase + ( recordNum * SIZEOFRASTERRECORD ) + ( threadId * SIZEOFRASTERRECORD );
 
 			for ( addressNum = 0; addressNum < NUMOFADDRESSRECORDSPERCORE; addressNum++ ) {
 
