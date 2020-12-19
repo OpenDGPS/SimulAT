@@ -31,13 +31,13 @@ void mapRasterToAddresses(int rasterRecords, int addressRecords) {
 
 			currentRasterAddress = rasterRecords + ( recordNum * SIZEOFRASTERRECORD ) + ( threadId * SIZEOFRASTERRECORD );
 
-			printf("\t\t\trecordNum:\t%d\n",recordNum);
+			printf("\t\t\trecordNum:\t%d\tcurrentRasterAddress:\t%d\n",recordNum,currentRasterAddress);
 
 			for ( addressNum = 0; addressNum < NUMOFADDRESSRECORDSPERCORE; addressNum++ ) {
 
 				currentAddressAddress = addressBase + ( addressNum * SIZEOFADDRESSRECORD );
 				
-				printf("threadId = %d \taddressBase = %d \tcurrentRaster = %d \tcurrentAddress = %d\n",threadId, addressBase, currentRasterAddress,currentAddressAddress);
+				printf("\t\t\t\taddressNum = %d \tcurrentAddressAddress = %d\n", addressNum, currentAddressAddress);
 			
 			}
 	    }
