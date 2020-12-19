@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-#define NUMOFRASTERRECORDSPERCORE 16 // 160  // defined by num of raster records ~80k divided by num of GPU cores ~512
+#define NUMOFRASTERRECORDSPERCORE 3 // 160  // defined by num of raster records ~80k divided by num of GPU cores ~512
 #define SIZEOFRASTERRECORD 4 // DWORDS to jump between the records
 
-#define NUMOFADDRESSRECORDSPERCORE 5 // 5000 // defined by num of address records ~2.5m divided by num of GPU cores ~512
-#define NUMOFADDRESSBLOCKS 12 // 512 // equal to the number of GPU cores
+#define NUMOFADDRESSRECORDSPERCORE 4 // 5000 // defined by num of address records ~2.5m divided by num of GPU cores ~512
+#define NUMOFADDRESSBLOCKS 3 // 512 // equal to the number of GPU cores
 #define SIZEOFADDRESSRECORD 5 // DWORDS to jump between the records
 
 int globalThreadId = 0;
