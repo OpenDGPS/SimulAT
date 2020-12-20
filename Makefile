@@ -5,5 +5,8 @@ simulat:
 clean:
 	rm -f simulat
 
+run:
+	./simulat
+	
 all: clean simulat 
 	./simulat
