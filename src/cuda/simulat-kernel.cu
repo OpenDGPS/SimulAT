@@ -11,6 +11,13 @@
 // addresses are stored in int(4Byte): id, int(4Byte): lat, int(4Byte): lon, int(4Byte): [rasterId]
 #define SIZEOFADDRESSRECORD 4 // DWORDS to jump between the records
 
+#define ADDLAT 1
+#define ADDLON 2
+#define MINLAT 1
+#define MINLON 2
+#define MAXLAT 3
+#define MAXLON 4
+
 int globalThreadId = 0;
 
 // __global__ 
