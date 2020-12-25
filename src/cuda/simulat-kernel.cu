@@ -50,7 +50,10 @@ void mapRasterToAddresses(int rasterBase, int addressRecords) {
 
 				printf("\t\t\taddressNum = %d \tcurrentAddressAddress = %d\n", addressNum, currentAddressAddress);
 
-				printf("if currentRasterAddress:[%d][1] < currentAddressAddress:[%d][1]\n", currentRasterAddress, currentAddressAddress);
+				printf("if currentRasterAddress:[%d][MINLAT] > currentAddressAddress:[%d][ADDLAT]\n", currentRasterAddress, currentAddressAddress);
+				printf("if currentRasterAddress:[%d][MAXLAT] < currentAddressAddress:[%d][ADDLAT]\n", currentRasterAddress, currentAddressAddress);
+				printf("if currentRasterAddress:[%d][MINLON] > currentAddressAddress:[%d][ADDLON]\n", currentRasterAddress, currentAddressAddress);
+				printf("if currentRasterAddress:[%d][MAXLON] > currentAddressAddress:[%d][ADDLON]\n", currentRasterAddress, currentAddressAddress);
 			
 			}
 	    }
