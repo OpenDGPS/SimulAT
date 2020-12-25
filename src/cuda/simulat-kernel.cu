@@ -22,7 +22,7 @@ int globalThreadId = 0;
 
 // __global__ 
 
-void mapRasterToAddresses(int rasterBase, int addressRecords) {
+void mapRasterToAddresses(int *rasterBase, int *addressRecords) {
 
 	int threadId, recordNum, addressBlockNum, currentAddressBlockNum, addressBase, addressNum, currentRasterAddress, currentAddressAddress;
 	
