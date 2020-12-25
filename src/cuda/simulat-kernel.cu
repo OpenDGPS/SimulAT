@@ -26,6 +26,8 @@ void mapRasterToAddresses(int rasterBase, int addressRecords) {
 
 	int threadId, recordNum, addressBlockNum, currentAddressBlockNum, addressBase, addressNum, currentRasterAddress, currentAddressAddress;
 	
+	int rMinLat, rMaxLat, rMinLon, rMaxLon, aLat, aLon;
+
 	threadId = globalThreadId;
 
 	for ( addressBlockNum = 0; addressBlockNum < NUMOFADDRESSBLOCKS; addressBlockNum++ ) {
@@ -50,10 +52,16 @@ void mapRasterToAddresses(int rasterBase, int addressRecords) {
 
 				printf("\t\t\taddressNum = %d \tcurrentAddressAddress = %d\n", addressNum, currentAddressAddress);
 
-				printf("if currentRasterAddress:[%d][MINLAT] > currentAddressAddress:[%d][ADDLAT]\n", currentRasterAddress, currentAddressAddress);
-				printf("if currentRasterAddress:[%d][MAXLAT] < currentAddressAddress:[%d][ADDLAT]\n", currentRasterAddress, currentAddressAddress);
-				printf("if currentRasterAddress:[%d][MINLON] > currentAddressAddress:[%d][ADDLON]\n", currentRasterAddress, currentAddressAddress);
-				printf("if currentRasterAddress:[%d][MAXLON] > currentAddressAddress:[%d][ADDLON]\n", currentRasterAddress, currentAddressAddress);
+				rMinLat = currentRasterAddress[currentRasterAddress][MINLAT];
+				rMaxLat = currentRasterAddress[currentRasterAddress][MAXLAT];
+				rMinLon = currentRasterAddress[currentRasterAddress][MINLON];
+				rMaxLon = currentRasterAddress[currentRasterAddress][MAXLON];
+				aLat = currentAddressAddress[currentAddressAddress][ADDLAT];
+				aLon = currentAddressAddress[currentAddressAddress][ADDLON];
+				printf("rMinLat > aLat\n");
+				printf("rMaxLat < aLat\n");
+				printf("rMinLon > aLon\n");
+				printf("rMaxLon > aLon\n");
 			
 			}
 	    }
