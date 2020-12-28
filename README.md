@@ -9,7 +9,7 @@ Don't know yet!
 
 ## CUDA device sepcifics
 
-Currently the package is tested and works on a __Jetson Xavier (16GByte)__, __Jetson Nano__ and a __MacBook Pro__ (GForce 650m/1GByte).
+Currently the package is tested and works on a __Jetson Xavier (16GByte)__, a __Jetson Nano__ and a __MacBook Pro__ (GForce 650m/1GByte).
 
 ## Data Preparation 
 
