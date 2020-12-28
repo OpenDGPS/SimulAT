@@ -58,6 +58,7 @@ void mapRasterToAddresses(int rasterBase, int addressRecords) {
 
 				printf("\t\t\taddressNum = %d \tcurrentAddressAddress = %d\n", addressNum, currentAddressAddress);
 
+				/*
 				rMinLat = currentRasterAddress[currentRasterAddress][MINLAT];
 				rMaxLat = currentRasterAddress[currentRasterAddress][MAXLAT];
 				rMinLon = currentRasterAddress[currentRasterAddress][MINLON];
@@ -68,6 +69,7 @@ void mapRasterToAddresses(int rasterBase, int addressRecords) {
 				printf("rMaxLat < aLat\n");
 				printf("rMinLon > aLon\n");
 				printf("rMaxLon > aLon\n");
+				*/
 			
 			}
 	    }
