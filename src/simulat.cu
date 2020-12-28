@@ -15,10 +15,11 @@ int main ( void ) {
   for (globalThreadId = 0; globalThreadId < 3; globalThreadId++ ) {
     // mapRasterToAddresses(2000,4000);
   }
-  int N = 1<<22;
+  int N = 1<<23;
   float *x, *y, *d_x, *d_y;
   x = (float*)malloc(N*sizeof(float));
   y = (float*)malloc(N*sizeof(float));
+  printf("%f",sizeof(x));
 
   cudaMalloc(&d_x, N*sizeof(float)); 
   cudaMalloc(&d_y, N*sizeof(float));
