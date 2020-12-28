@@ -7,6 +7,10 @@ Given a set of public or privat available demographic data about a real populati
 ## How it works
 Don't know yet!
 
+## CUDA device sepcifics
+
+Currently the package is tested and works on a __Jetson Xavier (16GByte)__, __Jetson Nano__ and a __MacBook Pro__ (GForce 960/1GByte).
+
 ## Data Preparation 
 
 1. Sort Demographic data by Lat and Lon fields.
