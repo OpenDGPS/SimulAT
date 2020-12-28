@@ -32,7 +32,7 @@ void mapRasterToAddresses(int rasterBase, int addressRecords) {
 
 	int threadId, recordNum, addressBlockNum, currentAddressBlockNum, addressBase, addressNum, currentRasterAddress, currentAddressAddress;
 	
-	int rMinLat, rMaxLat, rMinLon, rMaxLon, aLat, aLon;
+	// int rMinLat, rMaxLat, rMinLon, rMaxLon, aLat, aLon;
 
 	threadId = globalThreadId;
 
