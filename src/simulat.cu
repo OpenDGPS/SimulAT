@@ -15,7 +15,7 @@ int main ( void ) {
   for (globalThreadId = 0; globalThreadId < 3; globalThreadId++ ) {
     // mapRasterToAddresses(2000,4000);
   }
-  int N = 1<<23;
+  int N = 1<<24;
   float *x, *y, *d_x, *d_y;
   x = (float*)malloc(N*sizeof(float));
   y = (float*)malloc(N*sizeof(float));
