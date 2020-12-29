@@ -19,7 +19,7 @@ int main ( void ) {
   float *x, *y, *d_x, *d_y;
   x = (float*)malloc(N*sizeof(float));
   y = (float*)malloc(N*sizeof(float));
-  printf("%lu",sizeof(float));
+  printf("%lu\n",sizeof(N));
 
   cudaMalloc(&d_x, N*sizeof(float)); 
   cudaMalloc(&d_y, N*sizeof(float));
